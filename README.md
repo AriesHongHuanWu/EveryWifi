@@ -2,7 +2,7 @@
 
 輕量 Windows 台灣公共 Wi-Fi 助手。使用原生 WinForms 與 Windows WLAN API，在右下角通知區域常駐，讓你看清楚連線狀態、選擇公開網路、自己決定權限。
 
-[Landing page](https://everywifi.pages.dev/) · [Windows 下載](https://github.com/AriesHongHuanWu/EveryWifi/releases/tag/v0.1.0) · [資料來源](docs/NETWORK_SOURCES.md)
+[Landing page](https://everywifi.pages.dev/) · [Windows 下載](https://github.com/AriesHongHuanWu/EveryWifi/releases/tag/v0.1.1) · [資料來源](docs/NETWORK_SOURCES.md)
 
 ![Windows 實際介面；示意模式不讀取或切換 Wi-Fi](docs/app-preview.png)
 
@@ -41,7 +41,7 @@ Windows 11 新版可能需要在「設定 → 隱私權與安全性 → 位置�
 
 只有允許上網檢查後，按下按鈕才向 `http://www.msftconnecttest.com/connecttest.txt` 發出短 HTTP 請求；這有助辨識 captive portal，不傳送密碼。登入頁僅由使用者明確點擊開啟，本程式不收集或自動填入帳密、電話、OTP，不略過付費與使用條款。
 
-**v0.1.0 是未簽章預覽版**。SmartScreen 可能提示未知發行者；權限確認本身不會替程式取得簽章或防毒信譽。請核对 Releases 的 SHA-256，必要時請系統管理員審閱原始碼；不要關閉 Defender 或加入防毒排除。正式發行需可信憑證／Microsoft Artifact Signing 與持續建立發行信譽。本專案不聲稱零誤判。
+**v0.1.1 是未簽章預覽版**。SmartScreen 可能提示未知發行者；權限確認本身不會替程式取得簽章或防毒信譽。請核对 Releases 的 SHA-256，必要時請系統管理員審閱原始碼；不要關閉 Defender 或加入防毒排除。正式發行需可信憑證／Microsoft Artifact Signing 與持續建立發行信譽。本專案不聲稱零誤判。
 
 ## 開發與驗證
 

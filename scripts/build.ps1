@@ -17,6 +17,7 @@ Get-ChildItem -LiteralPath $packageDirectory -Filter '*.pdb' | Remove-Item
 Copy-Item -LiteralPath (Join-Path $projectRoot 'README.md') -Destination (Join-Path $packageDirectory 'README.md') -Force
 Copy-Item -LiteralPath (Join-Path $projectRoot 'LICENSE') -Destination $packageDirectory -Force
 Copy-Item -LiteralPath (Join-Path $projectRoot 'docs/UPSTREAM_MIT_LICENSE.txt') -Destination $packageDirectory -Force
+Copy-Item -LiteralPath (Join-Path $projectRoot 'docs') -Destination $packageDirectory -Recurse -Force
 $archive = Join-Path $projectRoot 'artifacts/EveryWifi-Windows.zip'
 Compress-Archive -Path (Join-Path $packageDirectory '*') -DestinationPath $archive -Force
 $hash = (Get-FileHash -LiteralPath $archive -Algorithm SHA256).Hash.ToLowerInvariant()

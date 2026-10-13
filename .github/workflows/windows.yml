@@ -41,5 +41,9 @@ jobs:
           GH_REPO: ${{ github.repository }}
           RELEASE_TAG: ${{ github.ref_name }}
         run: |
-          printf '%s\n' 'Windows 10/11 preview build. Unsigned: verify SHA-256 and review source. No antivirus exclusions required. See README for permissions and network limitations.' > release-notes.txt
-          gh release create "$RELEASE_TAG" artifacts/* --title "EveryWifi $RELEASE_TAG (Preview)" --notes-file release-notes.txt --prerelease
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            echo "Release already exists; keeping the verified published assets."
+          else
+            printf '%s\n' 'Windows 10/11 preview build. Unsigned: verify SHA-256 and review source. Do not disable antivirus or add exclusions. See README for permissions and network limitations.' > release-notes.txt
+            gh release create "$RELEASE_TAG" artifacts/* --title "EveryWifi $RELEASE_TAG (Preview)" --notes-file release-notes.txt --prerelease
+          fi

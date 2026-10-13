@@ -66,7 +66,7 @@ namespace EveryWifi.UI
                 b.Click += (s, e) => { pages.SelectedIndex = index; title.Text = nav[index]; }; sidebar.Controls.Add(b);
                 pages.TabPages.Add(new TabPage(nav[i]) { BackColor = Theme.Paper, Padding = new Padding(6) });
             }
-            var bottom = new Label { Text = "WINDOWS 原生程式\n免帳號 · 無遙測\n\nv0.1.0 preview", Dock = DockStyle.Bottom, Height = 98, Padding = new Padding(22, 0, 0, 20), ForeColor = Color.FromArgb(151, 194, 187), Font = new Font("Microsoft JhengHei UI", 9) }; sidebar.Controls.Add(bottom);
+            var bottom = new Label { Text = "WINDOWS 原生程式\n免帳號 · 無遙測\n\nv0.1.1 preview", Dock = DockStyle.Bottom, Height = 98, Padding = new Padding(22, 0, 0, 20), ForeColor = Color.FromArgb(151, 194, 187), Font = new Font("Microsoft JhengHei UI", 9) }; sidebar.Controls.Add(bottom);
             shell.Controls.Add(sidebar, 0, 0);
             var content = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 1, RowCount = 4, Padding = new Padding(22, 12, 22, 12), Margin = Padding.Empty };
             content.RowStyles.Add(new RowStyle(SizeType.Absolute, 65)); content.RowStyles.Add(new RowStyle(SizeType.Absolute, 112)); content.RowStyles.Add(new RowStyle(SizeType.Percent, 100)); content.RowStyles.Add(new RowStyle(SizeType.Absolute, 30));
