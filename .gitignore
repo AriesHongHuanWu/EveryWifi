@@ -1,0 +1,11 @@
+**/bin/
+**/obj/
+artifacts/
+site/dist/downloads/
+.vs/
+*.user
+*.pfx
+*.p12
+*.key
+work/
+.wrangler/

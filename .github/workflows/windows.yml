@@ -1,0 +1,45 @@
+name: Windows build and checks
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+      - name: Build and check without touching Wi-Fi
+        shell: pwsh
+        run: ./scripts/build.ps1
+      - uses: actions/upload-artifact@v4
+        with:
+          name: EveryWifi-Windows
+          path: |
+            artifacts/EveryWifi-Windows.zip
+            artifacts/SHA256SUMS.txt
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: windows
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: EveryWifi-Windows
+          path: artifacts
+      - name: Create unsigned preview release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          printf '%s\n' 'Windows 10/11 preview build. Unsigned: verify SHA-256 and review source. No antivirus exclusions required. See README for permissions and network limitations.' > release-notes.txt
+          gh release create "$RELEASE_TAG" artifacts/* --title "EveryWifi $RELEASE_TAG (Preview)" --notes-file release-notes.txt --prerelease

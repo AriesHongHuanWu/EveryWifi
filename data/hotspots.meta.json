@@ -1,0 +1,15 @@
+{
+  "sourceName": "數位發展部 iTaiwan 公共區域免費無線上網熱點",
+  "sourceUrl": "https://data.gov.tw/dataset/5962",
+  "resourceUrl": "https://itaiwan.gov.tw/ITaiwanDW/GetFile?fileName=IpSelect_tw.json&type=6",
+  "retrievedOn": "2026-10-13",
+  "sourceRecordCount": 14710,
+  "uniqueRecordCount": 14695,
+  "duplicateRecordCount": 15,
+  "invalidCoordinateCount": 0,
+  "cityCount": 22,
+  "sourceSha256": "a23ff282e7d724b1032a517112452ba5d7c71de8ac3b4be838425cbcda5bf602",
+  "licenseName": "政府資料開放授權條款 第1版",
+  "licenseUrl": "https://data.gov.tw/license",
+  "note": "Official listed locations, not a live scan or uptime guarantee. Duplicate city/name/address rows removed; coordinates preserved as provided when within Taiwan bounds. Same SSID cannot prove access-point ownership."
+}
