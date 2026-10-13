@@ -2,7 +2,7 @@
 
 儲存庫：`AriesHongHuanWu/EveryWifi`（公開）。靜態來源：`site/dist`，無第三方前端依賴。
 
-Cloudflare Pages 名稱：`everywifi`。若有 GitHub 整合，Production branch 為 `main`、build command 空白、output directory 為 `site/dist`、root directory 為儲存庫根目錄。下載連結可以指向公開 GitHub Release，無需將 Windows 可執行檔加入原始碼歷史。
+Cloudflare Pages 名稱：`everywifi`，已連接 GitHub `AriesHongHuanWu/EveryWifi`。Production branch 為 `main`、production deployments enabled、preview branches all、build command 空白、output directory 為 `site/dist`、root directory 為 `/`（儲存庫根目錄）。推送 `main` 時自動部署網站。下載連結指向公開 GitHub Release，無需將 Windows 可執行檔加入原始碼歷史。
 
 直接上傳也可部署：
 

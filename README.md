@@ -4,6 +4,8 @@
 
 [Landing page](https://everywifi.pages.dev/) · [Windows 下載](https://github.com/AriesHongHuanWu/EveryWifi/releases/tag/v0.1.0) · [資料來源](docs/NETWORK_SOURCES.md)
 
+![Windows 實際介面；示意模式不讀取或切換 Wi-Fi](docs/app-preview.png)
+
 ## 安裝與使用
 
 1. 從 Releases 下載 `EveryWifi-Windows.zip`，解壓縮整個資料夾。
@@ -52,6 +54,8 @@ Windows + .NET SDK 8 或更新版本：
 輸出在 `artifacts/EveryWifi-Windows.zip`，同時產生 SHA256SUMS.txt 與 landing page 下載檔。測試只處理 profile XML、密碼／網址驗證及資料結構，不切換開發者實際 Wi-Fi。
 
 `EveryWifi.exe --preview` 提供明確標示的示意介面，不存取系統 Wi-Fi 或儲存本機設定。
+
+已完成本機與 GitHub Windows 建置、78 項檢查、原生視窗預覽與網站桌面／手機檢查。尚未在各商家現場測試連線或 WPA3/captive portal，也尚未取得可信程式碼簽章。詳細紀錄見 [驗證範圍](docs/VERIFICATION.md)。
 
 ```powershell
 ./scripts/refresh-hotspots.ps1
